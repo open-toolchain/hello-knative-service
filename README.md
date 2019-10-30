@@ -1,2 +1,1 @@
-# hello-knative-service
-Knative Service demo application
+Sample application packaged as a container using Knative Service for deployment
