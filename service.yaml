@@ -1,5 +1,4 @@
----
-apiVersion: serving.knative.dev/v1alpha1
+apiVersion: serving.knative.dev/v1
 kind: Service
 metadata:
   name: helloknative
@@ -8,7 +7,9 @@ spec:
   template:
     spec:
       containers:
-        - image: helloknative
+        - image: $IMAGE_REPOSITORY
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
+      imagePullSecrets:
+        - name: $IMAGE_PULL_SECRET_NAME
